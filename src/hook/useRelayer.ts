@@ -50,8 +50,8 @@ export function useRelayer(): useRelayerReturn {
           throw new Error(data.error || "Transaction failed");
         }
         setTxHashes((prev) => [...prev, data.txHash]);
-      } catch (e: any) {
-        setError(e.message);
+      } catch (e) {
+        setError((e as { message: string }).message);
       } finally {
         setIsLoading(false);
         refetchGlobalCount();
@@ -83,8 +83,8 @@ export function useRelayer(): useRelayerReturn {
           throw new Error(data.error || "Transaction failed");
         }
         setTxHashes((prev) => [...prev, data.txHash]);
-      } catch (e: unknown) {
-        setError(e.message);
+      } catch (e) {
+        setError((e as { message: string }).message);
       } finally {
         setIsLoading(false);
         refetchGlobalCount();

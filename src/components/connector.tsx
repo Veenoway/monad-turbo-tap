@@ -1,4 +1,5 @@
 "use client";
+import { useGetPrimaryNameForAddress } from "@nadnameservice/nns-wagmi-hooks";
 import { useState } from "react";
 import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
 import { WalletModal } from "./connector-modal";
@@ -11,6 +12,11 @@ export function WalletConnection() {
   const { disconnect } = useDisconnect();
   const { switchChainAsync } = useSwitchChain();
   const isWrongNetwork = chainId !== chainID;
+  const { primaryName, isError, isLoading } = useGetPrimaryNameForAddress(
+    address as `0x${string}`
+  );
+
+  console.log("primaryName", primaryName);
 
   const handleSwitchNetwork = async () => {
     try {
@@ -59,7 +65,9 @@ export function WalletConnection() {
             onClick={handleDisconnect}
             className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase"
           >
-            {`${address?.slice(0, 6)}...${address?.slice(-4)}`}
+            {isLoading || isError || !primaryName
+              ? `${address?.slice(0, 6)}...${address?.slice(-4)}`
+              : primaryName}
           </button>
         </div>
       )}

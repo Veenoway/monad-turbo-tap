@@ -53,7 +53,9 @@ async function processTransaction(
 
   if (currentNonce === null) {
     const nonceHex = await walletClient.request({
-      method: "eth_getTransactionCount" as unknown as any,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      method: "eth_getTransactionCount",
       params: [account.address, "pending"],
     });
     currentNonce = parseInt(String(nonceHex), 16);
@@ -80,10 +82,15 @@ async function processTransaction(
         "Invalid action. Supported actions: 'click', 'submitScore'."
       );
     }
-  } catch (error: any) {
-    if (error.message && error.message.includes("Nonce too low")) {
+  } catch (error) {
+    if (
+      (error as { message: string }).message &&
+      (error as { message: string }).message.includes("Nonce too low")
+    ) {
       const nonceHex = await walletClient.request({
-        method: "eth_getTransactionCount" as unknown as any,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        method: "eth_getTransactionCount",
         params: [account.address, "pending"],
       });
       currentNonce = parseInt(String(nonceHex), 16);
