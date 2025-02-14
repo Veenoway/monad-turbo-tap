@@ -1,6 +1,3 @@
-
-
-```markdown
 # Prebuilt Relayer - Game Base on Monad
 
 This project serves as a starter base for creating a game on Monad using a relayer that enables blockchain transactions without requiring the user to sign them. Simply build your game, and you're ready to go!
@@ -80,7 +77,5 @@ Or for submitting scores:
 5. Open Pull Request
 
 ## License
-
 MIT License
 
-```
