@@ -42,7 +42,7 @@ export function WalletConnection() {
         onClick={handleSwitchNetwork}
         className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase"
       >
-        Switch to Monad Devnet
+        Switch to Monad Testnet
       </button>
     );
   }
