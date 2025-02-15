@@ -2,6 +2,8 @@
 
 This project serves as a starter base for creating a game on Monad using a relayer that enables blockchain transactions without requiring the user to sign them. Simply build your game, and you're ready to go!
 
+## Remove middleware.ts
+
 ## Features
 
 - **Transaction Relayer**: Send transactions via a relayer - users play without gas fees or wallet interactions
