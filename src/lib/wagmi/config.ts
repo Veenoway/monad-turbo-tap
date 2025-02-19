@@ -2,6 +2,7 @@ import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 import { cookieStorage, createStorage, Storage } from "wagmi";
 
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+console.log("ProjectID:", projectId);
 export const monadChain = {
   id: Number(process.env.NEXT_PUBLIC_MONAD_CHAIN_ID as unknown as number),
   name: "Monad Devnet",

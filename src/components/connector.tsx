@@ -1,13 +1,13 @@
 "use client";
+import { useOpenStore } from "@/store/useConnectionStore";
 import { useGetPrimaryNameForAddress } from "@nadnameservice/nns-wagmi-hooks";
-import { useState } from "react";
 import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
 import { WalletModal } from "./connector-modal";
 
 const chainID = Number(process.env.NEXT_PUBLIC_MONAD_CHAIN_ID as string);
 
 export function WalletConnection() {
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useOpenStore();
   const { address, chainId } = useAccount();
   const { disconnect } = useDisconnect();
   const { switchChainAsync } = useSwitchChain();
@@ -40,7 +40,7 @@ export function WalletConnection() {
     return (
       <button
         onClick={handleSwitchNetwork}
-        className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase"
+        className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase absolute right-5 top-5 z-[100000]"
       >
         Switch to Monad Devnet
       </button>
@@ -53,7 +53,7 @@ export function WalletConnection() {
         <WalletModal open={open} setOpen={setOpen}>
           <button
             onClick={() => setOpen(true)}
-            className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase"
+            className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase  absolute right-5 top-5 z-[100000]"
           >
             Connect Wallet
           </button>
@@ -63,7 +63,7 @@ export function WalletConnection() {
         <div className="flex items-center gap-4">
           <button
             onClick={handleDisconnect}
-            className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase"
+            className="bg-[#a1055c] rounded-lg h-[50px] px-4 font-bold text-2xl uppercase  absolute right-5 top-5 z-[100000]"
           >
             {isLoading || isError || !primaryName
               ? `${address?.slice(0, 6)}...${address?.slice(-4)}`
