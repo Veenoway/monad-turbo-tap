@@ -1,0 +1,180 @@
+{
+  "compiler": { "version": "0.8.20+commit.a1b79de6" },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "newTxCount",
+            "type": "uint256"
+          }
+        ],
+        "name": "Click",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "lastScore",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "bestScore",
+            "type": "uint256"
+          }
+        ],
+        "name": "ScoreSubmitted",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_userAddress",
+            "type": "address"
+          }
+        ],
+        "name": "click",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getLeaderboard",
+        "outputs": [
+          {
+            "internalType": "address[]",
+            "name": "topPlayers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "bestScores",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "txCounts",
+            "type": "uint256[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "address", "name": "player", "type": "address" }
+        ],
+        "name": "getRank",
+        "outputs": [
+          { "internalType": "uint256", "name": "rank", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "leaderboard",
+        "outputs": [
+          { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "name": "players",
+        "outputs": [
+          { "internalType": "uint256", "name": "bestScore", "type": "uint256" },
+          { "internalType": "uint256", "name": "lastScore", "type": "uint256" },
+          { "internalType": "uint256", "name": "txCount", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "playersList",
+        "outputs": [
+          { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "name": "registered",
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "score", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "_userAddress",
+            "type": "address"
+          }
+        ],
+        "name": "submitScore",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ],
+    "devdoc": { "kind": "dev", "methods": {}, "version": 1 },
+    "userdoc": { "kind": "user", "methods": {}, "version": 1 }
+  },
+  "settings": {
+    "compilationTarget": {
+      "contracts/Testnet/NoveePrebuiltRelayer.sol": "NoveePrebuiltRelayer"
+    },
+    "evmVersion": "shanghai",
+    "libraries": {},
+    "metadata": { "bytecodeHash": "ipfs" },
+    "optimizer": { "enabled": false, "runs": 200 },
+    "remappings": []
+  },
+  "sources": {
+    "contracts/Testnet/NoveePrebuiltRelayer.sol": {
+      "keccak256": "0x89a222f4a9a8bba27fa4d4d30f506afc11d34f3e30699d1f1e7ee1db5606c823",
+      "license": "MIT",
+      "urls": [
+        "bzz-raw://e652fffadbabd44ed35cd9bd05e6bd76d1b4ba1a0bfd6a3d510c5d30e211c713",
+        "dweb:/ipfs/QmYUcbf13XowwRgo5BRZKvm9Fy1xGKG6W5SEjhut9NXhkn"
+      ]
+    }
+  },
+  "version": 1
+}
